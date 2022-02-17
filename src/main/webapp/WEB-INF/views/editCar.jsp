@@ -16,34 +16,91 @@
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <style>
-    	#myInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 30%; /* Full-width */
-  font-size: 10px; /* Increase font-size */
-  padding: 10px 18px 10px 38px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 10px; /* Add some space below the input */
-}
-
-
-}
-</style>
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="../../assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="../../assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <style>
+ .button {
+  background-color: #FF5F1F; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #FF5F1F;
+}
+
+.button1:hover {
+  background-color: #FF5F1F;
+  color: white;
+}
+
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+  
+  </style>
+  <style>
+ .btn {
+  background-color: #FFFFFF; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}  
+.error {
+    color: red;
+    font-style: italic;
+}
+  </style>
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:../../partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="../../assets/images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../assets/images/logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="../../index.html"><img src="assets/images/logo.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -63,7 +120,7 @@
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <div class="nav-profile-img">
-                  <img src="../../assets/images/faces/face1.jpg" alt="image">
+                  <img src="assets/images/faces/face1.jpg" alt="image">
                   <span class="availability-status online"></span>
                 </div>
                 <div class="nav-profile-text">
@@ -93,7 +150,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../assets/images/faces/face4.jpg" alt="image" class="profile-pic">
+                    <img src="assets/images/faces/face4.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -103,7 +160,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../assets/images/faces/face2.jpg" alt="image" class="profile-pic">
+                    <img src="assets/images/faces/face2.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -113,7 +170,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../../assets/images/faces/face3.jpg" alt="image" class="profile-pic">
+                    <img src="assets/images/faces/face3.jpg" alt="image" class="profile-pic">
                   </div>
                   <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                     <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -195,7 +252,7 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="nav-profile-image">
-                  <img src="../../assets/images/faces/face1.jpg" alt="profile">
+                  <img src="assets/images/faces/face1.jpg" alt="profile">
                   <span class="login-status online"></span>
                   <!--change to offline or busy as needed-->
                 </div>
@@ -288,74 +345,153 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="page-header">
-              <h3 class="page-title"> Basic Tables </h3>
+              <h3 class="page-title"> Form elements </h3>
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Basic tables</li>
+                  <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Form elements</li>
                 </ol>
               </nav>
             </div>
             <div class="row">
-              
-              
-
-              <div class="col-lg-12 grid-margin stretch-card">
-
-                
+              <div class="col-md-6 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Gestion des voyages </h4>
-                    <p class="card-description"> 
-                    </p>
-                    <div class="col-sm-12 col-md-6">
-					<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-                    <table id="myTable" class="table table-hover">
-                      <thead>
-                        <tr>
-                          <th>Nom</th>
-                          <th>Prix</th>
-                          <th>Model</th>
-                          <th>Vitesse</th>
-                          <th>Consommation</th>
-                          <th>Matricule</th>
-                          <th>Moteur</th>
-                          <th>Actions</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <c:forEach items="${carsList}" var="car" >
-                        <tr>
-                          <td>${car.name }</td>
-                          <td>${car.price }</td>
-                          <td>${car.model }<i class="mdi mdi-arrow-up"></i></td>
-                          <td>${car.vitesse } <i class="mdi mdi-arrow-down"></i></td>
-                          <td>${car.consommation }</td>
-                          <td>${car.matricule }</td>
-                          <td>${car.moteur }</td>
-                          <td><a class="btn btn-info btn-sm"
-													href="/edit/${car.id }">
-														<i class="fas fa-pencil-alt"> </i> Modifier
-												</a> <a class="btn btn-danger btn-sm"
-													href="/delete/${car.id }" onclick="" >
-														<i class="fas fa-trash"> </i> Delete
-												</a></td>
-                        </tr>
-                        </c:forEach>
-                     <!--   <tr>
-                          <td>Messsy</td>
-                          <td>Flash</td>
-                          <td class="text-danger"> 21.06% <i class="mdi mdi-arrow-down"></i></td>
-                          <td><label class="badge badge-warning">In progress</label></td>
-                        </tr> -->
-                        
-                      </tbody>
-                    </table>
+                    <h4 class="card-title">Modifier une voiture</h4>
+                    <p class="card-description"> entrer les informations necessaire </p>
+                    <form method="POST" action="editCar" >
+                      <div class="form-group row">
+                        <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Nom du voiture</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="name" value="${car.name }" class="form-control" id="exampleInputUsername2" placeholder="nom">
+                          <form:errors path="name" cssClass="error" />
+                        </div>
+                      </div>
+                      <input type="hidden" value="${car.id}" name="id" >
+                      <div class="form-group row">
+                        <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Model</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="model" value="${car.model }" class="form-control" id="exampleInputEmail2" placeholder="depart">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Matricule</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="matricule" value="${car.matricule }" class="form-control" id="exampleInputMobile" placeholder="destination">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Consommation</label>
+                        <div class="col-sm-9">
+                          <input type="text" name="consommation" value="${car.consommation }" class="form-control" id="exampleInputMobile" placeholder="destination">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Release date</label>
+                        <div class="col-sm-9">
+                          <input type="date" name="dateRelease" value="${car.dateRelease }" class="form-control" id="exampleInputPassword2" placeholder="date">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Description
+                        </label>
+                        <div class="col-sm-9">
+                          <input type="text" name="description" value="${car.description }" class="form-control" id="exampleInputConfirmPassword2" placeholder="durée">
+                        </div>
+                      </div>
+
+                       <div class="form-group row">
+                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Photo</label>
+                        <div class="col-sm-9">
+                          <input type="file" name="image" value="${car.image }" class="form-control" id="exampleInputPassword2" placeholder="upload file">
+                        </div>
+                      </div>
+                       <div class="form-group row">
+                        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Prix</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" value="${car.price }" name="price" id="exampleInputPassword2" placeholder="prix">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Vitesse</label>
+                      <div class="col-sm-9">
+                      <select name="vitesse"  class="form-control" id="exampleFormControlSelect2">
+                        <option>manuel</option>
+                        <option>automatic</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Moteur</label>
+                      <div class="col-sm-9">
+                      <select name="moteur" class="form-control" id="exampleFormControlSelect2">
+                        <option>diesel</option>
+                        <option>essence</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Air Condition</label>
+                      <div class="col-sm-9">
+                      <select name="airCondition" class="form-control" id="exampleFormControlSelect2">
+                        <option>true</option>
+                        <option>false</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Radar de recul</label>
+                      <div class="col-sm-9">
+                      <select name="radar" class="form-control" id="exampleFormControlSelect2">
+                        <option>true</option>
+                        <option>false</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Hébergement</label>
+                      <div class="col-sm-9">
+                      <select class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Activité</label>
+                      <div class="col-sm-9">
+                      <select class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="exampleFormControlSelect2" class="col-sm-3 col-form-label">Transport</label>
+                      <div class="col-sm-9">
+                      <select class="form-control" id="exampleFormControlSelect2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                      <input type="submit" value="Modifier" class="button button1" style="vertical-align:middle"><span></span>
+                      <button type="reset" class="btn btn-light">Reset</button>
+                    </form>
                   </div>
                 </div>
-               </div>
-
-              
+              </div>
               
           <!-- content-wrapper ends -->
           <!-- partial:../../partials/_footer.html -->
@@ -373,39 +509,17 @@
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../../assets/js/off-canvas.js"></script>
-    <script src="../../assets/js/hoverable-collapse.js"></script>
-    <script src="../../assets/js/misc.js"></script>
+    <script src="assets/js/off-canvas.js"></script>
+    <script src="assets/js/hoverable-collapse.js"></script>
+    <script src="assets/js/misc.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
-    <script>
-function myFunction() {
-  // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-
-  // Loop through all table rows, and hide those who don't match the search query
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>
+    <script src="assets/js/file-upload.js"></script>
     <!-- End custom js for this page -->
   </body>
 </html>

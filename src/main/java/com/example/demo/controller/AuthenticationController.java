@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.repository.CarRepository;
 import com.example.demo.repository.UserRepository;
 
 @Controller
@@ -14,6 +15,9 @@ public class AuthenticationController {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	CarRepository carRepository;
 	
 	@RequestMapping("/login")
 	public ModelAndView login() {
@@ -31,7 +35,7 @@ public class AuthenticationController {
 	@GetMapping({"/home","/"})
 	public ModelAndView home() {
 		ModelAndView model = new ModelAndView("home");
-		model.addObject("hafidi","Hafidi");
+		model.addObject("carsToRent",carRepository.findAll());
 		return model;
 	}
 	

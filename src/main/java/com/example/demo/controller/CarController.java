@@ -6,12 +6,10 @@ import java.sql.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -72,8 +70,8 @@ public class CarController {
 		return model;
 	}
 	
-	@PutMapping("/edit/{id}")
-	public ModelAndView editCar(@PathVariable("id")int id,
+	@PostMapping("edit/editCar")
+	public ModelAndView editCar(@RequestParam("id")int id,
 			@RequestParam("name")String name,
 			@RequestParam("price")double price,
 			@RequestParam("matricule")String matricule,
@@ -96,12 +94,20 @@ public class CarController {
 		car.setPrice(price);
 		car.setVitesse(vitesse);
 		car.setMoteur(moteur);
-		car.setImage(image);
+		//car.setImage(image);
 		car.setConsommation(consommation);
 		car.setRadarRecul(reculRadar);
 		car.setDateRelease(dateRelease);
 		carRepository.save(car);
-		ModelAndView model = new ModelAndView("listCars");
+		ModelAndView modelview = new ModelAndView("redirect:/cars");
+		return modelview;
+	}
+	
+	@GetMapping("/edit/{id}")
+	public ModelAndView editCar(@PathVariable("id")int id) {
+		ModelAndView model = new ModelAndView("editCar");
+		model.addObject("car", carRepository.getOne(id));
+		return model;
 	}
 	
 	@GetMapping("/delete/{id}")
