@@ -185,7 +185,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h3 class="block-title"><span>Login</span></h3>
-                        <form th:action="@{/login}" method="post" class="form-login">
+                        <form th:action="authenticate" method="post" class="form-login">
                             <div class="row">
                                 <div class="col-md-12 hello-text-wrap">
                                     <span class="hello-text text-thin">Hello, welcome to your account</span>
@@ -197,10 +197,10 @@
                                     <a class="btn btn-theme btn-block btn-icon-left twitter" href="#"><i class="fa fa-twitter"></i>Sign in with Twitter</a>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="text" placeholder="User name or email"></div>
+                                    <div class="form-group"><input class="form-control" name="username" type="text" placeholder="User name or email"></div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group"><input class="form-control" type="password" placeholder="Your password"></div>
+                                    <div class="form-group"><input class="form-control" name="password" type="password" placeholder="Your password"></div>
                                 </div>
                                 <div class="col-md-12 col-lg-6">
                                     <div class="checkbox">

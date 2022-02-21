@@ -22,24 +22,18 @@ public class AuthenticationController {
 	@RequestMapping("/login")
 	public ModelAndView login() {
 		ModelAndView model = new ModelAndView("login");
-		model.addObject("users", userRepository.count());
-		return model;
-	}
-	
-	@RequestMapping("/register")
-	public ModelAndView register() {
-		ModelAndView model = new ModelAndView("register");
 		return model;
 	}
 	
 	@GetMapping({"/home","/"})
 	public ModelAndView home() {
 		ModelAndView model = new ModelAndView("home");
+		System.out.println("home**************");
 		model.addObject("carsToRent",carRepository.findAll());
 		return model;
 	}
 	
-	@RequestMapping("/homeAdmin")
+	@RequestMapping("/admin/home")
 	public ModelAndView homeAdmin() {
 		ModelAndView model = new ModelAndView("homeAdmin");
 		return model;

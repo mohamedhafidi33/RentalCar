@@ -23,10 +23,6 @@ public class DemoApplication implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
-			User user = new User();
-			user.setPassword("1234");
-			user.setUsername("hafidi");
-			userRepository.save(user);
-			System.out.println("heere");
+			System.out.println("application started");
 	}
 }
