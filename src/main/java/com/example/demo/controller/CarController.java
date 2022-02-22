@@ -61,7 +61,7 @@ public class CarController {
 		car.setRadarRecul(reculRadar);
 		car.setDateRelease(dateRelease);
 		carRepository.save(car);
-		return "redirect:/cars";
+		return "redirect:/admin/cars";
 		
 	}
 	

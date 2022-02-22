@@ -128,7 +128,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li><a href="blog.html">Blog</a>
+                                <li><a href="/logout">Logout</a>
                                     <ul>
                                         <li><a href="blog.html">Blog Sidebar Left </a></li>
                                         <li><a href="blog-right.html">Blog Sidebar Right</a></li>
