@@ -50,7 +50,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 
 	    Map<String, String> roleTargetUrlMap = new HashMap<>();
 	    roleTargetUrlMap.put("USER", "/home");
-	    roleTargetUrlMap.put("ADMIN", "/admin/cars");
+	    roleTargetUrlMap.put("ADMIN", "/admin/home");
 
 	    final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
 	    for (final GrantedAuthority grantedAuthority : authorities) {

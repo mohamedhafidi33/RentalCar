@@ -33,7 +33,7 @@
     <link href="../assets/css/theme.css" rel="stylesheet">
 
     <!-- Head Libs -->
-    <script src="assets/plugins/modernizr.custom.js"></script>
+    <script src="../assets/plugins/modernizr.custom.js"></script>
 
     <!--[if lt IE 9]>
     <script src="assets/plugins/iesupport/html5shiv.js"></script>
@@ -66,7 +66,7 @@
 
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="index.html"><img src="assets/img/logo-rentit.png" alt="Rent It"/></a>
+                    <a href="index.html"><img src="../assets/img/logo-rentit.png" alt="Rent It"/></a>
                 </div>
                 <!-- /Logo -->
 
@@ -178,18 +178,18 @@
                                             <ul>
                                                 <li class="title">
                                                     <h2>${carDetailed.name} <span>${carDetailed.moteur}</span></h2>
-                                                    2.0 CC Comfortline 95 HP
+                                                    ${carDetailed.description }
                                                 </li>
                                                 <li>Fuel Diesel / 1600 cm3 Engine</li>
-                                                <li>Under 25,000 Km</li>
-                                                <li>Transmission Manual</li>
-                                                <li>5 Year service included</li>
-                                                <li>Manufacturing Year 2014</li>
-                                                <li>5 Doors and Panorama View</li>
+                                                <li>${carDetailed.consommation } L/Km</li>
+                                                <li>${carDetailed.model }</li>
+                                                <li>${carDetailed.vitesse }</li>
+                                                <li>${carDetailed.dateRelease }</li>
+                                                <li>${carDetailed.description }</li>
                                             </ul>
                                         </div>
                                         <div class="price">
-                                            <strong>220.0</strong> <span>$/for 8 day(s)</span> <i class="fa fa-info-circle"></i>
+                                            <strong>${carDetailed.price }</strong> <span>$/for 8 day(s)</span> <i class="fa fa-info-circle"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -257,7 +257,7 @@
                         </form>
 
                         <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Customer Information</h3>
-                        <form action="#" class="form-delivery">
+<!--                         <form action="#" class="form-delivery"> -->
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="radio radio-inline">
@@ -288,7 +288,7 @@
                                     <div class="form-group"><input class="form-control alt" type="text" placeholder="Cell Phone Number:"></div>
                                 </div>
                             </div>
-                        </form>
+<!--                         </form> -->
 
                         <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Payments options</h3>
                         <div class="panel-group payments-options" id="accordion" role="tablist" aria-multiselectable="true">
@@ -351,7 +351,7 @@
                         </div>
 
                         <h3 class="block-title alt"><i class="fa fa-angle-down"></i>Additional Information</h3>
-                        <form action="#" class="form-additional">
+<!--                         <form action="#" class="form-additional"> -->
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -360,14 +360,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+<!--                         </form> -->
 
                         <div class="overflowed reservation-now">
                             <div class="checkbox pull-right">
                                 <input id="accept" type="checkbox" name="fd-name" title="Please accept" data-toggle="tooltip">
                                 <label for="accept">I accept all information and Payments etc</label>
                             </div>
-                            <a class="btn btn-theme pull-left btn-reservation-now" href="#">Reservation Now</a>
+                            <a class="btn btn-theme pull-left btn-reservation-now" href="/client/rentCar/${carDetailed.id}">Reservation Now</a>
                             <a class="btn btn-theme pull-left btn-cancel btn-theme-dark" href="#">Cancel</a>
                         </div>
 
@@ -399,7 +399,7 @@
                                     <div class="media-body"><p>From SkyLine AirPort</p></div>
                                 </div>
                                 <div class="button">
-                                    <a href="#" class="btn btn-block btn-theme btn-theme-dark">Update Reservation</a>
+                                    <a href="/client/rentCar/${carDetailed.id}" class="btn btn-block btn-theme btn-theme-dark">Update Reservation</a>
                                 </div>
                             </div>
                         </div>
