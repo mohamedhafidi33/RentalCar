@@ -696,7 +696,7 @@
                                                 <h4 class="caption-title"><a href="#">${car.name}</a></h4>
                                                 <div class="caption-text">Start from ${car.price} $/per a day</div>
                                                 <div class="buttons">
-                                                    <a class="btn btn-theme ripple-effect" href="#">Rent It</a>
+                                                    <a class="btn btn-theme ripple-effect" href="/carDetails/${car.id}">Rent It</a>
                                                 </div>
                                                 <table class="table">
                                                     <tr>
