@@ -38,13 +38,20 @@ public class RentCarController {
 	@GetMapping("/rentCar/{id}")
 	public String rentCar(@PathVariable("id") int id) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		System.out.println("session "+auth.getName());
-		Client client = new Client();
-		client.setUser(userRepository.findByUsername(auth.getName()));
 		Reservation reservation = new Reservation();
-		reservation.setClient(client);
+		reservation.setClient(clientRepository.findByUser(userRepository.findByUsername(auth.getName())));
 		reservation.setCar(carRepository.getById(id));
 		reservationRepository.save(reservation);
 		return "redirect:/client/panier";
+	}
+	
+	@GetMapping("/home")
+	public  ModelAndView homeClient(){
+		ModelAndView model = new ModelAndView("homeClient");
+		System.out.println("homeClient**************");
+		model.addObject("carsToRent",carRepository.findAll());
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		model.addObject("curentClient",clientRepository.findByUser(userRepository.findByUsername(auth.getName())));
+		return model;
 	}
 }

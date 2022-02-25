@@ -41,7 +41,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		.disable()
 		.authorizeHttpRequests()
 		//.antMatchers("/login").permitAll()
-		.antMatchers("/home/**").hasAuthority(Role.USER.name())
+		.antMatchers("/client/**").hasAuthority(Role.USER.name())
 		.antMatchers("/admin/**").hasAuthority(Role.ADMIN.name())
 		.antMatchers("/register").permitAll()
 		.antMatchers("/logout").authenticated()

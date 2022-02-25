@@ -26,11 +26,11 @@ public class Reservation {
 	private Date dateRetour;
 	
 	@ManyToOne(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
-	@MapsId("clientId")
+	@JoinColumn(name="client_id",referencedColumnName="id")
 	private Client client;
 	
 	@ManyToOne(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
-	@MapsId("carId")
+	@JoinColumn(name="car_id",referencedColumnName="id")
 	private Car car;
 	
 }

@@ -49,7 +49,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 	protected String determineTargetUrl(final Authentication authentication) {
 
 	    Map<String, String> roleTargetUrlMap = new HashMap<>();
-	    roleTargetUrlMap.put("USER", "/home");
+	    roleTargetUrlMap.put("USER", "/client/home");
 	    roleTargetUrlMap.put("ADMIN", "/admin/home");
 
 	    final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();

@@ -20,7 +20,6 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table
-@NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
 	
@@ -44,6 +43,8 @@ public class User implements UserDetails {
 	
 	private boolean locked;
 	private boolean enabled;
+	
+	
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -84,6 +85,10 @@ public class User implements UserDetails {
 	public String getPassword() {
 		// TODO Auto-generated method stub
 		return password;
+	}
+
+	public User() {
+		this.enabled=false;
 	}
 	
 	
